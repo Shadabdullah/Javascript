@@ -276,4 +276,4 @@ acc1.deposit(100).withDraw(10000).deposit(1000)
 
 console.log(acc1.getMovements())
 
-// 
+// Nice lectures for today
