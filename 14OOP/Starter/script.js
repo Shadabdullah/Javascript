@@ -72,34 +72,34 @@ console.log(arr.unique())
 
 // Challenge
 
-const Car =  function(make ,speed){
+// const Car =  function(make ,speed){
 
-    this.speed = speed
-    this.make  = make
+//     this.speed = speed
+//     this.make  = make
 
-}
+// }
 
-Car.prototype.speedy = function(){
+// Car.prototype.speedy = function(){
 
-    return this.speed + 'km/hr'
-}
+//     return this.speed + 'km/hr'
+// }
 
-Car.prototype.accelerate =  function(){
+// Car.prototype.accelerate =  function(){
 
-    this.speed+=10
-    console.log(this.speed)
-}
-Car.prototype.break = function(){
+//     this.speed+=10
+//     console.log(this.speed)
+// }
+// Car.prototype.break = function(){
 
-    this.speed -= 5
-    console.log(this.speed)
-}
+//     this.speed -= 5
+//     console.log(this.speed)
+// }
 
-const bmw = new Car("BMW" ,50)
+// const bmw = new Car("BMW" ,50)
 
-console.log(bmw.speedy())
-bmw.accelerate()
-bmw.break()
+// console.log(bmw.speedy())
+// bmw.accelerate()
+// bmw.break()
 
 // Classes
 class Persons{
@@ -209,71 +209,119 @@ class Persons1{
 // overwrite method if the child have same mthod as parent then first it will look for own method
 
 // one more example
-class Accounts{
-    //  1 public field (instances)
-    _movements = []
-    local = navigator.language
+// class Accounts{
+//     //  1 public field (instances)
+//     _movements = []
+//     local = navigator.language
 
-    // 2 private fields truly private
-   #movements
-   #pin
+//     // 2 private fields truly private
+//    #movements
+//    #pin
 
-    //
-    constructor(owner ,currency,pin){
+//     //
+//     constructor(owner ,currency,pin){
 
-        this.owner = owner
-        this.currency = currency
-        // protected
-        this.#pin = pin 
-        // properties not based on input
-        // protected
-        // this._movements = []
-        // this.local = navigator.language
+//         this.owner = owner
+//         this.currency = currency
+//         // protected
+//         this.#pin = pin 
+//         // properties not based on input
+//         // protected
+//         // this._movements = []
+//         // this.local = navigator.language
 
-        console.log(`Thanks for account ${this.owner}`)
+//         console.log(`Thanks for account ${this.owner}`)
 
-    }
-// Public interface of object
-  deposit(val){
-    this.#movements.push(val)
-    return this ;
-  }
-  withDraw(val){
+//     }
+// // Public interface of object
+//   deposit(val){
+//     this.#movements.push(val)
+//     return this ;
+//   }
+//   withDraw(val){
 
-    this.deposit(-val)
-    return this
-  }
- getMovements(){
+//     this.deposit(-val)
+//     return this
+//   }
+//  getMovements(){
 
-    return this.#movements
- }
- // no browser supports
- #getLoan(){
+//     return this.#movements
+//  }
+//  // no browser supports
+//  #getLoan(){
 
-    return False
- }
-}
+//     return False
+//  }
+// }
 
-const acc1 = new Accounts("shad","RS",121)
-console.log(acc1)
+// const acc1 = new Accounts("shad","RS",121)
+// console.log(acc1)
 
-//LECTURE encapsulation 
+// //LECTURE encapsulation 
 
-// add _ underscore
-
-
-//Truly Private
-
-// public fields 
-//  private field 
-//public method 
-//private method
-
-// Chaining method
-
-acc1.deposit(100).withDraw(10000).deposit(1000)
+// // add _ underscore
 
 
-console.log(acc1.getMovements())
+// //Truly Private
+
+// // public fields 
+// //  private field 
+// //public method 
+// //private method
+
+// // Chaining method
+
+// acc1.deposit(100).withDraw(10000).deposit(1000)
+
+
+// console.log(acc1.getMovements())
 
 // Nice lectures for today
+
+class Car {
+    constructor(make, speed) {
+
+        this.speed = speed;
+        this.make = make;
+
+    }
+    speedy() {
+
+        return `$ ${this.make} Going with speed ${this.speed} : 'km/hr '`;
+    }
+    accelerate() {
+        this.speed += 10;
+        console.log(`$ ${this.make} Going with speed ${this.speed} : 'km/hr '`)
+        return this;
+        
+    }
+    break() {
+        this.speed -= 5;
+        console.log(`$ ${this.make} Going with speed ${this.speed} : 'km/hr '`)
+        return this;
+        
+    }
+}
+
+
+
+
+class Evcl extends Car {
+    #charge ;
+    
+    constructor(make ,speed ,charge ){
+        super(make,speed)
+        this.#charge = charge
+    }
+
+    battry(){
+
+        return ` ${this.make} current charging${this.#charge}`
+    }
+}
+
+const Rivan = new Evcl("EVCL",50 ,50)
+
+(function() { var a = b = 5;})();
+
+console.log(b);
